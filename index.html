@@ -7,6 +7,12 @@
   <title>Portfólio - Luis Henrique</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #3498db;
+      --dark: #2c3e50;
+      --light: #ecf0f1;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,13 +21,14 @@
     }
 
     body {
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: var(--light);
+      color: var(--dark);
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      background: #2c3e50;
+      background: var(--dark);
       color: #fff;
       padding: 2rem 1rem;
       text-align: center;
@@ -35,31 +42,69 @@
       color: #fff;
       margin: 0 1rem;
       text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary);
     }
 
     .container {
-      max-width: 960px;
-      margin: 2rem auto;
+      max-width: 1100px;
+      margin: 3rem auto;
       padding: 1rem;
     }
 
+    section {
+      margin-bottom: 4rem;
+    }
+
     h2 {
-      margin-bottom: 1rem;
-      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid var(--primary);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .projetos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
 
     .projeto {
       background: #fff;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid #3498db;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .projeto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .projeto h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #2c3e50;
+      background: var(--dark);
       color: #fff;
     }
   </style>
@@ -79,20 +124,22 @@
   <main class="container">
     <section id="projetos">
       <h2>Projetos</h2>
-      <div class="projeto">
-        <h3>Bot de WhatsApp com envio automático</h3>
-        <p>Automação para envio de mensagens com dados de relatórios via WhatsApp Web.</p>
-        <p><strong>Tecnologias:</strong> Node.js, Puppeteer, Excel</p>
-      </div>
-      <div class="projeto">
-        <h3>Dashboard em Excel com gráficos</h3>
-        <p>Criação de relatórios visuais em Excel com base em dados operacionais.</p>
-        <p><strong>Tecnologias:</strong> Excel, VBA</p>
-      </div>
-      <div class="projeto">
-        <h3>Site local para equipe de vendas</h3>
-        <p>Portal interno para centralizar documentos, planilhas e ferramentas de consulta.</p>
-        <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+      <div class="projetos-grid">
+        <div class="projeto">
+          <h3>Bot de WhatsApp com envio automático</h3>
+          <p>Automação para envio de mensagens com dados de relatórios via WhatsApp Web.</p>
+          <p><strong>Tecnologias:</strong> Node.js, Puppeteer, Excel</p>
+        </div>
+        <div class="projeto">
+          <h3>Dashboard em Excel com gráficos</h3>
+          <p>Criação de relatórios visuais em Excel com base em dados operacionais.</p>
+          <p><strong>Tecnologias:</strong> Excel, VBA</p>
+        </div>
+        <div class="projeto">
+          <h3>Site local para equipe de vendas</h3>
+          <p>Portal interno para centralizar documentos, planilhas e ferramentas de consulta.</p>
+          <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+        </div>
       </div>
     </section>
 
